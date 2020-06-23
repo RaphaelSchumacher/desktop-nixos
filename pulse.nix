@@ -12,11 +12,6 @@
 	nixpkgs.config.pulseaudio = true;
 	hardware.pulseaudio = {
 		enable = true;
-
-		tcp = {
-			enable = true;
-			anonymousClients.allowAll = true;
-		};
 	};
 	hardware.pulseaudio.extraConfig = ''
 		load-module module-equalizer-sink
