@@ -45,9 +45,10 @@ qemu-system-x86_64 \
     -object iothread,id=iothread1\
     -device virtio-blk-pci,drive=drive1,scsi=off,iothread=iothread1\
     -drive file=/home/tehrafff/Projects/vfio/nvme.img,index=1,format=raw,media=disk \
-    -usb -device usb-host,vendorid=0x1af3,productid=0x0001 \
-    -usb -device usb-host,vendorid=0x1b1c,productid=0x1b15 \
-    -usb -device usb-host,vendorid=0x8087,productid=0x0a2b \
+    -device virtio-mouse-pci,id=input0 \
+    -device virtio-keyboard-pci,id=input1 \
+    -object input-linux,id=kbd1,evdev=/dev/input/by-id/usb-Corsair_Corsair_STRAFE_Gaming_Keyboard_0600B038AEBE8461563923B6F5001941-event-kbd,grab_all=yes \
+    -object input-linux,id=mouse1,evdev=/dev/input/by-id/usb-Kingsis_Peripherals_ZOWIE_Gaming_mouse-event-mouse \
     -device ivshmem-plain,memdev=ivshmem_scream \
     -object memory-backend-file,id=ivshmem_scream,share=on,mem-path=/dev/shm/scream-ivshmem,size=2M \
     -cdrom /home/tehrafff/Projects/vfio/win10.iso \
@@ -61,4 +62,5 @@ qemu-system-x86_64 \
 
 sleep 10
 chown -R tehrafff /dev/shm/scream-ivshmem
+#-drive file=/home/tehrafff/Projects/vfio/win10.iso,format=raw,index=2,media=cdrom \
  
