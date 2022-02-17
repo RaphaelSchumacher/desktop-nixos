@@ -6,7 +6,7 @@
 {
 # Enable sound.
 	environment.systemPackages = with pkgs; [
-		scream-receivers
+		scream
 	];
 	sound.enable = true;
 	nixpkgs.config.pulseaudio = true;
