@@ -6,7 +6,7 @@
 
 {
 	environment.systemPackages = with pkgs; [
-		git wget gnumake curl htop wireshark docker docker-compose konsole google-chrome firefox teams discord slack kdeApplications.spectacle qpaeq envsubst python plasma-integration plasma-browser-integration plasma5.kdeplasma-addons plasma5.bluedevil yakuake vscode amarok ];
+		git wget gnumake curl htop wireshark docker docker-compose konsole google-chrome firefox teams discord slack spectacle qpaeq envsubst python plasma-integration plasma-browser-integration kdeplasma-addons bluedevil yakuake vscode amarok ];
 	nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 }
 
