@@ -16,8 +16,11 @@
       ./gaming.nix
     ];
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+  	"python-2.7.18.8"
+  ];
   pciPassthrough = {
-    enable = true;
+    enable = false;
     pciIDs = "10de:1f06,10de:10f9,10de:1ada,10de:1adb";
   };
   boot.loader.systemd-boot.enable = true;
@@ -49,6 +52,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 }
 

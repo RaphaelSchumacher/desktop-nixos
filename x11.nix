@@ -6,14 +6,14 @@
 {
 # Enable the X11 windowing system.
 	services.xserver.enable = true;
-	services.xserver.layout = "us";
-	services.xserver.xkbOptions = "eurosign:e";
+	services.xserver.xkb.layout = "us";
+        services.xserver.xkb.options = "eurosign:e";	
 
 # Enable the KDE Desktop Environment.
-	services.xserver.displayManager.sddm.enable = true;
-	services.xserver.desktopManager.plasma5.enable = true;
+        services.displayManager.sddm.enable = true;
+	services.desktopManager.plasma6.enable = true;
 # Video drivers
-	services.xserver.videoDrivers = [ "intel" ];
+	services.xserver.videoDrivers = [ "nvidia" ];
 	hardware.opengl.driSupport32Bit = true; 
 }
 
